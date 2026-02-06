@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons@0.0.41/dist/codicon.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sections.css">
+    <script src="main.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Haiko | Portfolio</title>
+</head>
+
+<body>
+    <div id="loading-screen">
+        <img src="icones/loader-icon.svg" alt="Loading..." class="loader-icon">
+    </div>
+
+    <section class="window-nav-bar">
+        <span class="vscode-logo-container">
+            <img class="icon-image" alt="vscode icon" src="icones/vscode-icon.svg">
+        </span>
+        <div class="window-menu">
+            <p>File</p>
+            <p>Edit</p>
+            <p>Selection</p>
+            <p>View</p>
+            <p>Go</p>
+            <p>Run</p>
+            <p>Terminal</p>
+            <p>Help</p>
+        </div>
+        <p class="window-title">Haiko - Portfolio</p>
+        <div class="window-controls">
+            <span class="codicon codicon-chrome-minimize"></span>
+            <span class="codicon codicon-chrome-maximize"></span>
+            <span class="codicon codicon-chrome-close"></span>
+
+        </div>
+    </section>
+    <div class="main-container">
+        <div class="side-bar">
+            <div>
+                <div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-files sidebar-icon active"></span>
+                    </div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-search sidebar-icon"></span>
+                    </div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-source-control sidebar-icon"></span>
+                    </div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-debug-alt sidebar-icon"></span>
+                    </div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-extensions sidebar-icon"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+
+                <div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-account sidebar-icon"></span>
+                    </div>
+                    <div class="sidebar-icon-container">
+                        <span class="codicon codicon-settings-gear sidebar-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explorer-bar">
+            <p class="explorer-title"> EXPLORER </p>
+            <div class="explorer-heading-container">
+                <span class="codicon codicon-chevron-down"></span>
+                <p class="explorer-heading"> portfolio</p>
+            </div>
+            <div class="explorer-list">
+                <div class="explorer-list-item active" data-tab-target="#home">
+                    <span class="explorer-icon-container">
+                        <img class="icon-image" alt="react icon" src="icones/react-icon.svg">
+                    </span>
+                    <p>home.jsx</p>
+                </div>
+                <div class="explorer-list-item" data-tab-target="#about">
+                    <span class="explorer-icon-container">
+                        <img class="icon-image" alt="css icon" src="icones/css3-icon.svg">
+
+                    </span>
+                    <p>about.css</p>
+                </div>
+                <div class="explorer-list-item" data-tab-target="#projects">
+                    <span class="explorer-icon-container">
+                        <img class="icon-image" alt="html icon" src="icones/html-icon.svg">
+
+                    </span>
+                    <p>projects.html</p>
+                </div>
+                <div class="explorer-list-item" data-tab-target="#contact">
+                    <span class="explorer-icon-container">
+                        <img class="icon-image" alt="js icon" src="icones/js-icon.svg">
+                    </span>
+                    <p>contact.js</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-content-container">
+            <div class="tabs-bar">
+                <div class="tab-item active" data-tab-target="#home">
+                    <span class="tabs-icon-container">
+                        <img class="icon-image" alt="react icon" src="icones/react-icon.svg">
+                    </span>
+                    <p>home.jsx</p>
+                </div>
+                <div class="tab-item" data-tab-target="#about">
+                    <span class="tabs-icon-container">
+                        <img class="icon-image" alt="css icon" src="icones/css3-icon.svg">
+                    </span>
+                    <p>about.css</p>
+                </div>
+                <div class="tab-item" data-tab-target="#projects">
+                    <span class="tabs-icon-container">
+                        <img class="icon-image" alt="html icon" src="icones/html-icon.svg">
+                    </span>
+                    <p>projects.html</p>
+                </div>
+                <div class="tab-item" data-tab-target="#contact">
+                    <span class="tabs-icon-container">
+                        <img class="icon-image" alt="js icon" src="icones/js-icon.svg">
+                    </span>
+                    <p>contact.js</p>
+                </div>
+            </div>
+
+            <main class="layout-content-container">
+                <div id="home" data-tab-content class="layout-content active">
+                    <div class="layout-content-wrapper">
+                        <div class="home-container">
+                            <h1 class="home-title">Hi<span>!</span><span><br>I'M <span>HAIKO</span></h1>
+                            <h1 class="home-job-title">Front-End Developer</h1>
+                            <button class="home-button" data-tab-target="#projects">Projects</button>
+                            <button class="home-button" data-tab-target="#contact">Contact</button>
+                           <p class="home-description">
+                                I am currently a <span>first-year Computer Science student</span> at the <span>IUT2 of Grenoble</span>.
+                                <br>Passionate about programming since the age of <span>14</span> yo, 
+                                I started my journey by developing <span>Discord Bots</span> using <span>JavaScript</span> and <span>SQL</span> databases.
+                                <br>At 15 yo, my interest in operating systems led me to <span>Linux</span>, 
+                                an environment that I now use on a <span>daily basis</span>.
+                                <br>Today, I continue to <span>deepen</span> my technical experience while exploring 
+                                new languages such as <span>Java</span> or <span>HTML CSS</span> as part of my studies.
+                            </p>
+                        </div>
+                        <div class="image-container">
+                            <img style="width:100%" src="images/home.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="about" data-tab-content class="layout-content">
+                    <div class="about-wrapper">
+                        <div class="about-row">
+                            <div class="about-container">
+                                <h2 class="about-title">Know Who <span>I'M</span></h2>
+                                <div>
+                                    <!-- personal-info -->
+                                    <p class="css-line">
+                                        &nbsp;
+                                        <span class="class-name">.personal-info </span>
+                                        {
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">name</span>:
+                                        <span class="css-info">Haiko</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">location</span>:
+                                        <span class="css-info">Grenoble (FR)</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">profession</span>:
+                                        <span class="css-info">Student</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;}
+                                    </p>
+                                    <p class="css-line"></p>
+                                    <!-- socials -->
+                                    <p class="css-line">
+                                        &nbsp;
+                                        <span class="class-name">.socials </span>
+                                        {
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">email</span>:
+                                        <a class="css-btn" href="#" onclick="CopyToClipboard('haikoo.333@gmail.com', 'alert1');return false;"><span class="css-info"><span>haikoo.333@gmail.com</span></span></a>;
+                                        <span class="alert-message" id="alert1">Copied!</span>
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">github</span>:
+                                        <a class="css-btn" href="https://github.com/Haiko333" target="_blank" rel="noopener"><span class="css-info">Haiko333</span></a>;
+                                    </p>
+                                    <p class="css-line">
+                                        }
+                                    </p>
+                                    <p class="css-line"></p>
+                                    <!-- education -->
+                                    <p class="css-line">
+                                        <span class="class-name">.education </span>
+                                        {
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">degree</span>:
+                                        <span class="css-info">Technological Baccalaureate STI2D (SIN)</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">high-school</span>:
+                                        <a class="css-btn" href="https://www.lyceevictorhugo.com/" target="_blank" rel="noopener"><span class="css-info">Victor Hugo</span></a>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">graduated</span>:
+                                        <span class="css-info">July 2025</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        }
+                                    </p>
+                                    <p class="css-line"></p>
+                                    <!-- interests -->
+                                    <p class="css-line">
+                                        <span class="class-name">.interests </span>
+                                        {
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">languages</span>:
+                                        <span class="css-info">French, English, Spanish</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">hobbies</span>:
+                                        <span class="css-info">music, technology, sport</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-name">sports</span>:
+                                        <span class="css-info">Downhill Mountain Biking, Snowboarding</span>
+                                    </p>
+                                    <p class="css-line">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <span class="css-info">and Kitesurfing</span>;
+                                    </p>
+                                    <p class="css-line">
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="about-image-container">
+                                <img src="images/about.svg" alt="About">
+                            </div>
+                        </div>
+                        <div class="skills-tools-row">
+                            <div class="skills-block">
+                                <h2 class="skills-title">Professional <span>Skillset</span></h2>
+                                <div class="skills-list">
+                                    <span class="skills-icon"><img alt="js" src="icones/js-icon.svg">Javascript</span>
+                                    <span class="skills-icon"><img alt="ts" src="icones/ts-icon.svg">TypeScript</span>
+                                    <span class="skills-icon"><img alt="java" src="icones/java-icon.svg">Java</span>
+                                    <span class="skills-icon"><img alt="html" src="icones/html-icon.svg">Html</span>
+                                    <span class="skills-icon"><img alt="css" src="icones/css3-icon.svg">Css</span>
+                                    <span class="skills-icon"><img alt="python" src="icones/python-icon.svg">Python</span>
+                                    <span class="skills-icon"><img alt="c" src="icones/c-icon.svg">C</span>
+                                    <span class="skills-icon"><img alt="nodejs" src="icones/nodejs-icon.svg">Node.Js</span>
+                                    <span class="skills-icon"><img alt="mysql" src="icones/mysql-icon.svg">Mysql</span>
+                                    <span class="skills-icon"><img alt="postgresql" src="icones/postgresql-icon.svg">PostgreSQL</span>
+                                    <span class="skills-icon"><img alt="git" src="icones/git-icon.svg">Git</span>
+                                    <span class="skills-icon"><img alt="docker" src="icones/docker-icon.svg">Docker</span>
+
+                                </div>
+                            </div>
+                            <div class="tools-block">
+                                <h2 class="tools-title"><span>Tools</span> I use</h2>
+                                <div class="tools-list">
+                                    <span class="skills-icon"><img alt="windows" src="icones/win-icon.svg">Windows</span>
+                                    <span class="skills-icon"><img alt="arch" src="icones/arch-icon.svg">Arch</span>
+                                    <span class="skills-icon"><img alt="vscode" src="icones/vscode-icon.svg">Vs Code</span>
+                                    <span class="skills-icon"><img alt="webstorm" src="icones/webstorm-icon.svg">Webstorm</span>
+                                    <span class="skills-icon"><img alt="intellij" src="icones/intellij-icon.svg">IntelliJ</span>
+                                    <span class="skills-icon"><img alt="figma" src="icones/figma-svg.svg">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-block">
+                            <h2 class="code-title">Days I <span>Code</span></h2>
+    
+                            <div class="chart-github-container">
+                                <div class="chart-github">
+                                    <img src="https://ghchart.rshah.org/7517db/Haiko333" alt="Haiko333 Github chart"/>
+                                </div>
+        
+                                <div class="chart-legend">
+                                    <span>Less</span>
+                                    <div class="legend-squares">
+                                        <div class="sq level-0"></div>
+                                        <div class="sq level-1"></div>
+                                        <div class="sq level-2"></div>
+                                        <div class="sq level-3"></div>
+                                        <div class="sq level-4"></div>
+                                    </div>
+                                    <span>More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="projects" data-tab-content class="layout-content">
+                    <div class="projects-wrapper">
+                        <div class="projects-banner">
+                            <h2 class="projects-title">Projects</h2>
+                            <p>Here you can find my latest projects.</p>
+                            <p>Don't forget to check my <span class="here-link"><a href="https://github.com/Haiko333" target="_blank" rel="noopener">gitHub</a></span> for more projects.
+                            </p>
+                        </div>
+                        <div class="project-cards-container">
+                            <div class="project-card">
+                                <div class="project-image-container">
+                                    <span><img src="images/chatbot.png"></span>
+                                </div>
+                                <div class="project-card-content">
+                                    <h3>
+                                        Chatbot de culture
+                                        <img class="project-card-skill" alt="java-icon" src="icones/java-icon.svg">
+                                    </h3>
+        
+                                    <div class="project-ppp-info">
+                                        <p>
+                                            Dans le cadre d'une SAE en 1ère année de BUT Informatique, nous avons du réaliser un chatbot capable de répondre
+                                            à des questions de culture générale. Il est capable d'apprendre de nouvelle information et peux répondre en contexte.
+                                        </p>          
+                                        <p>
+                                            <span>Objectifs :</span>
+                                            Maîtriser la Programmation Orientée Objet et la gestion des flux de données.
+                                        </p>            
+                                        <p>
+                                            <span>Travail en groupe :</span>
+                                            Projet réalisé en binôme dans le cadre d'une SAE en 1ère année.
+                                        </p>            
+                                        <p>
+                                            <span>Travail individuel :</span>
+                                            Conception de l'algorithme de filtrage des mots-clés et gestion de la base de connaissances.
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div class="links-list">
+                                        <a class="link-btn" href="https://github.com/Haiko333/chatbot-culture" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="github" src="icones/github-icon.svg"></span>
+                                            <span class="link-btn-text">GitHub</span>
+                                        </a>
+                                        <a class="link-btn" href="https://replit.com/@Haiko333/chatbot-culture" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="replit" src="icones/replit-icon.svg"></span>
+                                            <span class="link-btn-text">Replit</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image-container">
+                                    <span><img src="images/portfolio.png"></span>
+                                </div>
+                                <div class="project-card-content">
+                                    <h3>
+                                        Portfolio
+                                        <img class="project-card-skill" alt="html-icon" src="icones/html-icon.svg">
+                                        <img class="project-card-skill" alt="css3-icon" src="icones/css3-icon.svg">
+                                        <img class="project-card-skill" alt="js-icon" src="icones/js-icon.svg">
+                                    </h3>
+        
+                                    <div class="project-ppp-info">
+                                        <p>
+                                            Dans le cadre d'une SAE en 1ère année de BUT Informatique, nous avons du réaliser un chatbot capable de répondre
+                                            à des questions de culture générale. Il est capable d'apprendre de nouvelle information et peux répondre en contexte.
+                                        </p>          
+                                        <p>
+                                            <span>Objectifs :</span>
+                                            Maîtriser la Programmation Orientée Objet et la gestion des flux de données.
+                                        </p>            
+                                        <p>
+                                            <span>Travail en groupe :</span>
+                                            Projet réalisé en binôme dans le cadre d'une SAE en 1ère année.
+                                        </p>            
+                                        <p>
+                                            <span>Travail individuel :</span>
+                                            Conception de l'algorithme de filtrage des mots-clés et gestion de la base de connaissances.
+                                        </p>
+                                    </div>
+                                    <hr>
+                                   <div class="links-list">
+                                        <a class="link-btn" href="https://github.com/Haiko333/portfolio-vscode" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="github" src="icones/github-icon.svg"></span>
+                                            <span class="link-btn-text">GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image-container">
+                                    <span><img src="images/portfolio.png"></span>
+                                </div>
+                                <div class="project-card-content">
+                                    <h3>
+                                        Yoko Bots
+                                        <img class="project-card-skill" alt="js-icon" src="icones/js-icon.svg">
+                                        <img class="project-card-skill" alt="ts-icon" src="icones/ts-icon.svg">
+                                        <img class="project-card-skill" alt="mysql-icon" src="icones/mysql-icon.svg">
+                                    </h3>
+                                    <div class="project-ppp-info">
+                                        <p>
+                                            Dans le cadre d'une SAE en 1ère année de BUT Informatique, nous avons du réaliser un chatbot capable de répondre
+                                            à des questions de culture générale. Il est capable d'apprendre de nouvelle information et peux répondre en contexte.
+                                        </p>          
+                                        <p>
+                                            <span>Objectifs :</span>
+                                            Maîtriser la Programmation Orientée Objet et la gestion des flux de données.
+                                        </p>            
+                                        <p>
+                                            <span>Travail en groupe :</span>
+                                            Projet réalisé en binôme dans le cadre d'une SAE en 1ère année.
+                                        </p>            
+                                        <p>
+                                            <span>Travail individuel :</span>
+                                            Conception de l'algorithme de filtrage des mots-clés et gestion de la base de connaissances.
+                                        </p>
+                                    </div>
+                                    <hr>
+                                    <div class="links-list">
+                                        <a class="link-btn" href="https://discord.gg/yokobots" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="discord" src="icones/discord-icon.svg"></span>
+                                            <span class="link-btn-text">Discord</span>
+                                        </a>
+                                        <a class="link-btn" href="https://yokoapp.dev" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="site" src="icones/link-icon.svg"></span>
+                                            <span class="link-btn-text">Web</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact" data-tab-content class="layout-content">
+                    <div class="contact-wrapper">
+                        <h1>Contact</h1>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<footer class="status-bar">
+    <div class="status-left">
+        <div class="status-item git-branch">
+            <span class="codicon codicon-source-control"></span>
+            <span>main*</span>
+        </div>
+        <div class="status-item sync">
+            <span class="codicon codicon-sync"></span>
+        </div>
+        <div class="status-item diagnostic">
+            <span class="codicon codicon-error"></span>
+            <span>0</span>
+            <span class="codicon codicon-warning"></span>
+            <span>0</span>
+        </div>
+    </div>
+
+    <div class="status-right">
+        <div class="status-item">Ln 1, Col 1</div>
+        <div class="status-item">Spaces: 4</div>
+        <div class="status-item">UTF-8</div>
+        <div class="status-item language-mode">
+            <span>HTML</span>
+        </div>
+        <div class="status-item prettier">
+            <span class="codicon codicon-check-all"></span>
+            <span>Prettier</span>
+        </div>
+        <div class="status-item feedback">
+            <span class="codicon codicon-feedback"></span>
+        </div>
+        <div class="status-item bell">
+            <span class="codicon codicon-bell"></span>
+        </div>
+    </div>
+</footer>
+</html>
