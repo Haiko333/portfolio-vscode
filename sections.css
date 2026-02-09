@@ -500,6 +500,76 @@ hr {
 }
 
 /* ============================================ */
+/* EXPERIENCE */
+/* ============================================ */
+
+.experience-wrapper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.experience-main-title {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.experience-main-title span {
+    color: var(--tab-hover-border);
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+}
+
+.exp-card {
+    background-color: var(--bg-menu);
+    border: 1px solid var(--explorer-border);
+    border-left: 3px solid var(--tab-hover-border);
+    padding: 24px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.exp-card:hover {
+    transform: translateX(5px);
+    border-color: var(--tab-hover-border);
+}
+
+.exp-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.exp-icon {
+    font-size: 20px;
+    color: var(--tab-hover-border);
+}
+
+.exp-card h3 {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.exp-date {
+    color: var(--tab-hover-border);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.exp-text {
+    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ============================================ */
 /* CONTACT */
 /* ============================================ */
 
