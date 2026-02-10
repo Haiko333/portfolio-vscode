@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://haiko333.github.io/portfolio-vscode/sitemap.xml
+Sitemap: https://h41k0.xyz/sitemap.xml
