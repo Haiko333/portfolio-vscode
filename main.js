@@ -57,3 +57,25 @@ window.addEventListener('load', () => {
         loader.classList.add('hidden');
     }, 1000); 
 });
+
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('user_email').value;
+    const message = document.getElementById('message').value;
+    const status = document.getElementById('form-status');
+
+    status.style.display = 'block';
+    status.innerText = "Chargement...";
+    status.style.color = "var(--tab-hover-border)";
+
+    setTimeout(() => {
+        status.innerText = "Message envoyé avec succès !";
+        status.style.color = "var(--tab-hover-border)";
+        // Ouvre le mail de l'user par défaut
+        window.location.href = `mailto:haikoo.333@gmail.com?subject=Contact de ${name}&body=${message} (Répondre à: ${email})`;
+        this.reset();
+    }, 1500);
+});

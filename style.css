@@ -777,6 +777,7 @@ h3 {
     gap: 12px;
     margin-top: 10px;
     line-height: 1.5;
+    min-height: 150px;
     color: var(--text-main);
 }
 
@@ -853,6 +854,11 @@ hr {
     padding-bottom: 50px;
 }
 
+.experience-content {
+    flex: 1;
+    min-width: 0;
+}
+
 .experience-main-title {
     text-align: left;
     margin-bottom: 40px;
@@ -919,6 +925,106 @@ hr {
 
 .contact-wrapper {
     padding-top: 50px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-top: 30px;
+}
+
+/* Style commu aux 3 colonnes */
+.contact-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-middle {
+    background: var(--bg-menu);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--explorer-border);
+    min-width: 320px; 
+    max-width: 500px; 
+}
+
+.contact-image-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+}
+
+.vs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--code-text-blue);
+    font-size: 14px;
+}
+
+.vs-form input, .vs-form textarea {
+    background: var(--bg-main);
+    border: 1px solid var(--tab-border);
+    color: var(--text-main);
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    outline: none;
+}
+
+.vs-form input:focus, .vs-form textarea:focus {
+    border-color: var(--tab-hover-border);
+}
+
+.vs-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.vs-form .home-button {
+    font-size: 18px;
+    padding: 10px;
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 1400px) {
+    #experience .image-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .contact-image-right {
+        display: none;
+    }
+    .contact-left, .contact-middle {
+        min-width: 45%; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-column, .contact-middle {
+        width: 100%;
+        min-width: auto;
+        max-width: none;
+    }
 }
 
 /* ============================================ */
@@ -1018,6 +1124,10 @@ hr {
     .project-cards-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .project-ppp-info {
+        min-height: 170px;
+    }
 }
 
 /* --- Tablet (< 930px) --- */
@@ -1065,6 +1175,10 @@ hr {
 
     .chart-github {
         padding: 10px;
+    }
+
+    .project-ppp-info {
+        min-height: auto;
     }
 }
 
