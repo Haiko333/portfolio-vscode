@@ -184,7 +184,7 @@
                     <div class="layout-content-wrapper">
                         <div class="home-container">
                             <h1 class="home-title">Hi<span>!</span><br>I'M <span>HAIKO</span></h1>
-                            <h1 class="home-job-title">Front-End Developer</h1>
+                            <h1 class="home-job-title"></h1>
                             <button class="home-button" data-tab-target="#projects">Projects</button>
                             <button class="home-button" data-tab-target="#contact">Contact</button>
                            <p class="home-description">
@@ -327,6 +327,7 @@
                                     <span class="skills-icon"><img alt="css" src="icones/css3-icon.svg">Css</span>
                                     <span class="skills-icon"><img alt="python" src="icones/python-icon.svg">Python</span>
                                     <span class="skills-icon"><img alt="c" src="icones/c-icon.svg">C</span>
+                                    <span class="skills-icon"><img alt="r" src="icones/r-icon.svg">R</span>
                                     <span class="skills-icon"><img alt="nodejs" src="icones/nodejs-icon.svg">Node.Js</span>
                                     <span class="skills-icon"><img alt="mysql" src="icones/mysql-icon.svg">Mysql</span>
                                     <span class="skills-icon"><img alt="postgresql" src="icones/postgresql-icon.svg">PostgreSQL</span>
@@ -522,7 +523,7 @@
                                 </div>
                             </div>
                             <div class="image-container">
-                                <img style="width:100%" src="images/about.svg" alt="Illustration Expérience" loading="lazy">
+                                <img style="width:100%" src="images/experience.svg" alt="Illustration Expérience" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -530,24 +531,10 @@
 
                 <div id="contact" data-tab-content class="layout-content">
                     <div class="contact-wrapper">
-                        <h2 class="about-title">Contactez <span>MOI</span></h2>
-                        <div class="contact-row">
-                            <div class="contact-column contact-left about-container">
-                                <p class="css-line">&nbsp;<span class="class-name">.contact-me</span> {</p>
-                                    <p class="css-line">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span class="css-name">email</span>:
-                                        <a class="css-btn" href="mailto:haikoo.333@gmail.com">
-                                            <span class="css-info">haikoo.333@gmail.com</span>;
-                                        </a>
-                                    </p>
-                                    <p class="css-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-name">discord</span>: <span class="css-info">h41k0.</span>;</p>
-                                    <p class="css-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-name">github</span>: <a class="css-btn" href="https://github.com/Haiko333" target="_blank"><span class="css-info">Haiko333</span></a>;</p>
-                                    <p class="css-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-name">status</span>: <span class="css-info">disponible</span>;</p>
-                                    <p class="css-line">&nbsp;}</p>
-                                </div>
-        
-                                <div class="contact-column contact-middle">
+                        <h2 class="about-title">Contact <span>ME</span></h2>
+                        <div class="contact-top-row">
+                            <div class="contact-left">
+                                <div class="contact-form-container">
                                     <form id="contact-form" class="vs-form">
                                         <div class="form-group">
                                             <label for="name">Nom</label>
@@ -564,14 +551,29 @@
                                         <button type="submit" class="home-button">Envoyer le commit</button>
                                         <p id="form-status" class="alert-message"></p>
                                     </form>
+                                    <div class="contact-socials">
+                                        <a class="link-btn" href="mailto:haikoo.333@gmail.com">
+                                            <span class="link-btn-icon"><img alt="mail" src="icones/mail-icon.svg"></span>
+                                            <span class="link-btn-text">Email</span>
+                                        </a>
+                                        <a class="link-btn" href="https://github.com/Haiko333" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="github" src="icones/github-icon.svg"></span>
+                                            <span class="link-btn-text">GitHub</span>
+                                        </a>
+                                        <a class="link-btn" href="https://discord.com/users/1089475809300971550" target="_blank" rel="noopener">
+                                            <span class="link-btn-icon"><img alt="discord" src="icones/discord-icon.svg"></span>
+                                            <span class="link-btn-text">Discord</span>
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <div class="contact-column contact-image-right image-container">
-                                    <img style="width:100%" src="images/contact.svg" alt="Illustration Contact" loading="lazy">
-                                </div>
+                            <div class="contact-image-right">
+                                <img src="images/contact.svg" alt="Illustration Contact" loading="lazy">
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </main>
         </div>

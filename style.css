@@ -571,7 +571,6 @@ h3 {
 }
 
 /* -- Skills & Tools -- */
-
 .skills-tools-row {
     display: flex;
     flex-wrap: wrap;
@@ -635,7 +634,6 @@ h3 {
 }
 
 /* -- Days I Code -- */
-
 .code-block {
     margin-top: 60px;
     width: 100%;
@@ -925,37 +923,60 @@ hr {
 
 .contact-wrapper {
     padding-top: 50px;
-}
-
-.contact-row {
     display: flex;
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 30px;
-    flex-wrap: wrap; 
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Style commu aux 3 colonnes */
-.contact-column {
-    flex: 1;
+.contact-wrapper .about-title {
+    text-align: center;
+}
+
+.contact-top-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-left {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
     min-width: 280px;
+    margin-top: 20px;
 }
 
-.contact-middle {
+.contact-image-right {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    min-width: 300px;
+}
+
+.contact-image-right img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+}
+
+.contact-form-container {
+    width: 100%;
+    max-width: 600px;
     background: var(--bg-menu);
     padding: 30px;
     border-radius: 8px;
     border: 1px solid var(--explorer-border);
-    min-width: 320px; 
-    max-width: 500px; 
 }
 
-.contact-image-right {
+.contact-socials {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
     justify-content: center;
-    max-width: 400px;
 }
 
 .vs-form {
@@ -1003,27 +1024,19 @@ hr {
     #experience .image-container {
         display: none;
     }
-}
 
-@media only screen and (max-width: 1200px) {
     .contact-image-right {
         display: none;
     }
-    .contact-left, .contact-middle {
-        min-width: 45%; 
+
+    .contact-left {
+        max-width: 600px;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .contact-row {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .contact-column, .contact-middle {
-        width: 100%;
+    .contact-left {
         min-width: auto;
-        max-width: none;
     }
 }
 
