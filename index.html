@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Haiko | Portfolio">
     <meta name="twitter:description" content="Portfolio de Haiko, etudiant en 1ere annee de BUT Informatique a l'IUT2 de Grenoble.">
-    <meta name="twitter:image" content="https://h41k0.xyz/images/favicon.png">
+    <meta name="twitter:image" content="https://h41k0.xyz/images/home.svg">
 
     <meta name="theme-color" content="#7517db">
 
@@ -66,6 +66,7 @@
 
         </div>
     </header>
+    <main id="main-content">
     <div class="main-container">
         <div class="side-bar">
             <div>
@@ -107,35 +108,35 @@
                 <span class="codicon codicon-chevron-down"></span>
                 <p class="explorer-heading"> portfolio</p>
             </div>
-            <div class="explorer-list">
-                <div class="explorer-list-item active" data-tab-target="#home">
+            <div class="explorer-list" role="tablist" aria-label="Navigation des sections">
+                <div class="explorer-list-item active" data-tab-target="#home" role="tab" aria-controls="home" aria-selected="true" tabindex="0">
                     <span class="explorer-icon-container">
                         <img class="icon-image" alt="react icon" src="icones/react-icon.svg">
                     </span>
                     <p>home.jsx</p>
                 </div>
-                <div class="explorer-list-item" data-tab-target="#about">
+                <div class="explorer-list-item" data-tab-target="#about" role="tab" aria-controls="about" aria-selected="false" tabindex="0">
                     <span class="explorer-icon-container">
                         <img class="icon-image" alt="css icon" src="icones/css3-icon.svg">
 
                     </span>
                     <p>about.css</p>
                 </div>
-                <div class="explorer-list-item" data-tab-target="#projects">
+                <div class="explorer-list-item" data-tab-target="#projects" role="tab" aria-controls="projects" aria-selected="false" tabindex="0">
                     <span class="explorer-icon-container">
                         <img class="icon-image" alt="html icon" src="icones/html-icon.svg">
 
                     </span>
                     <p>projects.html</p>
                 </div>
-                <div class="explorer-list-item" data-tab-target="#experience">
+                <div class="explorer-list-item" data-tab-target="#experience" role="tab" aria-controls="experience" aria-selected="false" tabindex="0">
                     <span class="explorer-icon-container">
                         <img class="icon-image" alt="python icon" src="icones/python-icon.svg">
 
                     </span>
                     <p>experience.py</p>
                 </div>
-                <div class="explorer-list-item" data-tab-target="#contact">
+                <div class="explorer-list-item" data-tab-target="#contact" role="tab" aria-controls="contact" aria-selected="false" tabindex="0">
                     <span class="explorer-icon-container">
                         <img class="icon-image" alt="js icon" src="icones/js-icon.svg">
                     </span>
@@ -146,32 +147,32 @@
 
 
         <div class="main-content-container">
-            <div class="tabs-bar">
-                <div class="tab-item active" data-tab-target="#home">
+            <div class="tabs-bar" role="tablist" aria-label="Onglets du portfolio">
+                <div class="tab-item active" data-tab-target="#home" role="tab" aria-controls="home" aria-selected="true" tabindex="0">
                     <span class="tabs-icon-container">
                         <img class="icon-image" alt="react icon" src="icones/react-icon.svg">
                     </span>
                     <p>home.jsx</p>
                 </div>
-                <div class="tab-item" data-tab-target="#about">
+                <div class="tab-item" data-tab-target="#about" role="tab" aria-controls="about" aria-selected="false" tabindex="0">
                     <span class="tabs-icon-container">
                         <img class="icon-image" alt="css icon" src="icones/css3-icon.svg">
                     </span>
                     <p>about.css</p>
                 </div>
-                <div class="tab-item" data-tab-target="#projects">
+                <div class="tab-item" data-tab-target="#projects" role="tab" aria-controls="projects" aria-selected="false" tabindex="0">
                     <span class="tabs-icon-container">
                         <img class="icon-image" alt="html icon" src="icones/html-icon.svg">
                     </span>
                     <p>projects.html</p>
                 </div>
-                <div class="tab-item" data-tab-target="#experience">
+                <div class="tab-item" data-tab-target="#experience" role="tab" aria-controls="experience" aria-selected="false" tabindex="0">
                     <span class="tabs-icon-container">
                         <img class="icon-image" alt="python icon" src="icones/python-icon.svg">
                     </span>
                     <p>experience.py</p>
                 </div>
-                <div class="tab-item" data-tab-target="#contact">
+                <div class="tab-item" data-tab-target="#contact" role="tab" aria-controls="contact" aria-selected="false" tabindex="0">
                     <span class="tabs-icon-container">
                         <img class="icon-image" alt="js icon" src="icones/js-icon.svg">
                     </span>
@@ -180,11 +181,11 @@
             </div>
 
             <div class="layout-content-container">
-                <div id="home" data-tab-content class="layout-content active">
+                <div id="home" data-tab-content class="layout-content active" role="tabpanel">
                     <div class="layout-content-wrapper">
                         <div class="home-container">
                             <h1 class="home-title">Hi<span>!</span><br>I'M <span>HAIKO</span></h1>
-                            <h1 class="home-job-title"></h1>
+                            <p class="home-job-title" aria-live="polite"></p>
                             <button class="home-button" data-tab-target="#projects">Projects</button>
                             <button class="home-button" data-tab-target="#contact">Contact</button>
                            <p class="home-description">
@@ -202,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="about" data-tab-content class="layout-content">
+                <div id="about" data-tab-content class="layout-content" role="tabpanel">
                     <div class="about-wrapper">
                         <div class="about-row">
                             <div class="about-container">
@@ -242,7 +243,7 @@
                                     <p class="css-line">
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <span class="css-name">email</span>:
-                                        <a class="css-btn" href="#" onclick="CopyToClipboard('haikoo.333@gmail.com', 'alert1');return false;"><span class="css-info"><span>haikoo.333@gmail.com</span></span></a>;
+                                        <a class="css-btn" href="#" id="copy-email-btn" data-copy-text="haikoo.333@gmail.com" data-alert-id="alert1"><span class="css-info"><span>haikoo.333@gmail.com</span></span></a>;
                                         <span class="alert-message" id="alert1">Copied!</span>
                                     </p>
                                     <p class="css-line">
@@ -372,7 +373,7 @@
                     </div>
                 </div>
 
-                <div id="projects" data-tab-content class="layout-content">
+                <div id="projects" data-tab-content class="layout-content" role="tabpanel">
                     <div class="projects-wrapper">
                         <div class="projects-banner">
                             <h2 class="projects-title">Projects</h2>
@@ -498,7 +499,7 @@
                     </div>
                 </div>
 
-                <div id="experience" data-tab-content class="layout-content">
+                <div id="experience" data-tab-content class="layout-content" role="tabpanel">
                     <div class="experience-wrapper">
                         <div class="layout-content-wrapper">
                             <div class="experience-content">
@@ -506,30 +507,46 @@
                                 <div class="experience-container">
                                     <div class="exp-card">
                                         <div class="exp-header">
-                                            <span class="codicon codicon-graph exp-icon"></span>
-                                            <h3>Yoko Bots</h3>
+                                            <span class="exp-icon"><img alt="nx-dev-studio" src="images/nx-dev.webp"></span>
+                                            <h3>Nx Dev Studio</h3>
                                         </div>
-                                        <p class="exp-date">Mai 2025 - Aujourd'hui</p>
+                                        <p class="exp-date">Novembre 2025 - Aujourd'hui</p>
                                         <p class="exp-text">Développement et maintenance de bots Discord complexes utilisant Node.js et MySQL.</p>
                                     </div>
                                     <div class="exp-card">
                                         <div class="exp-header">
-                                            <span class="codicon codicon-pulse exp-icon"></span>
+                                            <span class="exp-icon"><img alt="yokobots" src="images/yoko-bots.png"></span>
+                                            <h3>Yoko Bots</h3>
+                                        </div>
+                                        <p class="exp-date">Mai 2025 - Aujourd'hui</p>
+                                        <p class="exp-text">Développement et maintenance de bots Discord utilisant Node.js et MySQL.</p>
+                                    </div>
+                                    <div class="exp-card">
+                                        <div class="exp-header">
+                                            <span class="exp-icon"><img alt="network" src="images/technical.png"></span>
                                             <h3>Technicien Réseaux</h3>
                                         </div>
                                         <p class="exp-date">Janvier 2025 - Aujourd'hui</p>
                                         <p class="exp-text">Support technique et gestion d'infrastructures réseaux locales.</p>
                                     </div>
+                                    <div class="exp-card">
+                                        <div class="exp-header">
+                                            <span class="exp-icon"><img alt="artixbots" src="images/artixbots.png"></span>
+                                            <h3>ArtixBots</h3>
+                                        </div>
+                                        <p class="exp-date">Novembre 2024 - Juin 2025</p>
+                                        <p class="exp-text">Développement et maintenance de bots Discord utilisant Node.js et MySQL.</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="image-container">
-                                <img style="width:100%" src="images/experience.svg" alt="Illustration Expérience" loading="lazy">
+                                <img src="images/experience.svg" alt="Illustration Expérience" loading="lazy">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="contact" data-tab-content class="layout-content">
+                <div id="contact" data-tab-content class="layout-content" role="tabpanel">
                     <div class="contact-wrapper">
                         <h2 class="about-title">Contact <span>ME</span></h2>
                         <div class="contact-top-row">
@@ -537,19 +554,19 @@
                                 <div class="contact-form-container">
                                     <form id="contact-form" class="vs-form">
                                         <div class="form-group">
-                                            <label for="name">Nom</label>
-                                            <input type="text" id="name" name="name" required placeholder='Ex: "Recruteur Corp"'>
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" name="name" required placeholder='Ex: "Haiko"'>
                                         </div>
                                         <div class="form-group">
                                             <label for="user_email">Email</label>
-                                            <input type="email" id="user_email" name="user_email" required placeholder='Ex: "contact@corp.com"'>
+                                            <input type="email" id="user_email" name="user_email" required placeholder='Ex: "contact@h41k0.xyz"'>
                                         </div>
                                         <div class="form-group">
                                             <label for="message">Message</label>
-                                            <textarea id="message" name="message" required placeholder='console.log("Bonjour Haiko !");'></textarea>
+                                            <textarea id="message" name="message" required placeholder='console.log("Hi Haiko!");'></textarea>
                                         </div>
-                                        <button type="submit" class="home-button">Envoyer le commit</button>
-                                        <p id="form-status" class="alert-message"></p>
+                                        <button type="submit" class="home-button">Send message</button>
+                                        <p id="form-status" class="alert-message" aria-live="polite"></p>
                                     </form>
                                     <div class="contact-socials">
                                         <a class="link-btn" href="mailto:haikoo.333@gmail.com">
@@ -574,10 +591,9 @@
                         </div>
                     </div>
                 </div>
-                </div>
-            </main>
+            </div>
         </div>
-    </div>
+    </main>
 <footer class="status-bar">
     <div class="status-left">
         <div class="status-item git-branch">

@@ -1,8 +1,6 @@
-// Sélection de tous les éléments avec data-tab-target
 const tabs = document.querySelectorAll('[data-tab-target]');
 const tabContent = document.querySelectorAll('[data-tab-content]');
 
-// Animation du titre: effet machine à écrire
 const jobTitle = document.querySelector('.home-job-title');
 const words = ["Front-End Developer", "Discord Bot Developer", "Network Administrator"];
 let wordIndex = 0;
@@ -10,103 +8,156 @@ let charIndex = 0;
 let isDeleting = false;
 
 function type() {
+    if (!jobTitle) return;
+
     const currentWord = words[wordIndex];
     const currentChar = currentWord.substring(0, charIndex);
     jobTitle.textContent = currentChar;
 
     if (!isDeleting && charIndex < currentWord.length) {
         charIndex++;
-        setTimeout(type, 100); // Vitesse de frappe
+        setTimeout(type, 100);
     } else if (isDeleting && charIndex > 0) {
         charIndex--;
-        setTimeout(type, 50); // Vitesse de suppression
+        setTimeout(type, 50);
     } else {
         isDeleting = !isDeleting;
         if (!isDeleting) {
             wordIndex = (wordIndex + 1) % words.length;
         }
-        setTimeout(type, 1000); // Pause entre les mots
+        setTimeout(type, 1000);
     }
 }
 
-// Démarre l'animation de la machine à écrire
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loading-screen');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-        type(); // Démarre l'animation une fois la page chargée
-    }, 1000);
-});
+function setActiveTab(targetTabId) {
+    const targetContent = document.querySelector(targetTabId);
+    if (!targetContent) return;
 
-// Gestion des onglets
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const targetTabId = tab.dataset.tabTarget;
-        const targetContent = document.querySelector(targetTabId);
-
-        if (!targetContent) return;
-
-        // Masquer tout le contenu
-        tabContent.forEach(content => {
-            content.classList.remove('active');
-        });
-
-        // Retirer l'état actif de tous les éléments de navigation
-        tabs.forEach(t => {
-            t.classList.remove('active');
-
-            // Pour les conteneurs sidebar-icon-container, retirer aussi l'état actif de l'icône
-            if (t.classList.contains('sidebar-icon-container')) {
-                t.querySelector('.sidebar-icon')?.classList.remove('active');
-            }
-        });
-
-        // Activer l'élément cliqué et tous les éléments correspondants
-        tabs.forEach(t => {
-            if (t.dataset.tabTarget === targetTabId) {
-                t.classList.add('active');
-
-                // Pour les conteneurs sidebar-icon-container, activer aussi l'icône
-                if (t.classList.contains('sidebar-icon-container')) {
-                    t.querySelector('.sidebar-icon')?.classList.add('active');
-                }
-            }
-        });
-
-        // Afficher uniquement le contenu correspondant
-        targetContent.classList.add('active');
+    tabContent.forEach((content) => {
+        const isActive = `#${content.id}` === targetTabId;
+        content.classList.toggle('active', isActive);
+        content.hidden = !isActive;
     });
-});
 
-// Fonction pour copier dans le presse-papiers
-function CopyToClipboard(text, id) {
-    navigator.clipboard.writeText(text);
-    const alert = document.getElementById(id);
-    alert.style.display = "inline";
+    tabs.forEach((tab) => {
+        const isTarget = tab.dataset.tabTarget === targetTabId;
+        tab.classList.toggle('active', isTarget);
 
-    setTimeout(function () {
-        alert.style.display = "none";
-    }, 2000);
+        if (tab.getAttribute('role') === 'tab') {
+            tab.setAttribute('aria-selected', String(isTarget));
+            tab.tabIndex = isTarget ? 0 : -1;
+        }
+
+        if (tab.classList.contains('sidebar-icon-container')) {
+            tab.querySelector('.sidebar-icon')?.classList.toggle('active', isTarget);
+        }
+    });
 }
 
-// Gestion du formulaire de contact
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+async function copyToClipboard(text, alertId) {
+    const alert = document.getElementById(alertId);
+    if (!text || !alert) return;
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('user_email').value;
-    const message = document.getElementById('message').value;
-    const status = document.getElementById('form-status');
+    try {
+        if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+        } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
 
-    status.style.display = 'block';
-    status.innerText = "Chargement...";
-    status.style.color = "var(--tab-hover-border)";
+        alert.style.display = 'inline';
+        setTimeout(() => {
+            alert.style.display = 'none';
+        }, 2000);
+    } catch {
+        alert.textContent = 'Copy failed';
+        alert.style.display = 'inline';
+        setTimeout(() => {
+            alert.style.display = 'none';
+            alert.textContent = 'Copied!';
+        }, 2000);
+    }
+}
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loading-screen');
 
     setTimeout(() => {
-        status.innerText = "Message envoyé avec succès !";
-        status.style.color = "var(--tab-hover-border)";
-        // Ouvre le mail de l'utilisateur par défaut
-        window.location.href = `mailto:haikoo.333@gmail.com?subject=Contact de ${name}&body=${message} (Répondre à: ${email})`;
-        this.reset();
-    }, 1500);
+        loader?.classList.add('hidden');
+        type();
+    }, 1000);
+
+    tabs.forEach((tab) => {
+        const isInteractive =
+            tab.tagName === 'A' || tab.tagName === 'BUTTON' || tab.getAttribute('role') === 'tab';
+
+        if (!isInteractive && tab.dataset.tabTarget) {
+            tab.tabIndex = 0;
+        }
+
+        tab.addEventListener('click', () => {
+            const targetTabId = tab.dataset.tabTarget;
+            if (!targetTabId) return;
+            setActiveTab(targetTabId);
+        });
+
+        tab.addEventListener('keydown', (event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            const targetTabId = tab.dataset.tabTarget;
+            if (!targetTabId) return;
+            event.preventDefault();
+            setActiveTab(targetTabId);
+        });
+    });
+
+    const initialTab = document.querySelector('.tab-item.active')?.dataset.tabTarget || '#home';
+    setActiveTab(initialTab);
 });
+
+const copyEmailBtn = document.getElementById('copy-email-btn');
+if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const text = copyEmailBtn.dataset.copyText;
+        const alertId = copyEmailBtn.dataset.alertId;
+        if (!text || !alertId) return;
+        await copyToClipboard(text, alertId);
+    });
+}
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name')?.value?.trim() || '';
+        const email = document.getElementById('user_email')?.value?.trim() || '';
+        const message = document.getElementById('message')?.value?.trim() || '';
+        const status = document.getElementById('form-status');
+
+        if (!status) return;
+
+        status.style.display = 'block';
+        status.innerText = 'Chargement...';
+        status.style.color = 'var(--tab-hover-border)';
+
+        setTimeout(() => {
+            status.innerText = 'Ouverture du client mail...';
+
+            const subject = encodeURIComponent(`Contact de ${name}`);
+            const body = encodeURIComponent(`${message}\n\nRépondre à: ${email}`);
+            window.location.href = `mailto:haikoo.333@gmail.com?subject=${subject}&body=${body}`;
+
+            status.innerText = 'Message préparé avec succès !';
+            this.reset();
+        }, 900);
+    });
+}
